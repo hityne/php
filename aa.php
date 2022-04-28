@@ -11,7 +11,7 @@
     <span> True </span>
 <?php } ?>
 
-<?php if( $a>1 && $b < 100  ){ <span> False </span> } ?>
+<?php if( $a>1 && $b<100 ){ <span> False </span> } ?>
 
 
 </body>
