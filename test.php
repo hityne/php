@@ -5,9 +5,8 @@
 
 <?php
 echo "Hello World!";
-<br>
 ?>
-
+<br>
 <!-- <?php phpinfo() ?> -->
 
 <?php
