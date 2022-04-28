@@ -44,15 +44,30 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
- 
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
- 
+
+// 使用 sql 创建数据表
+$sql = "CREATE TABLE MyGuests (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP
+    )";
+     
 if (mysqli_query($conn, $sql)) {
-    echo "新记录插入成功";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+        echo "数据表 MyGuests 创建成功";
+    } else {
+        echo "创建数据表错误: " . mysqli_error($conn);
+    }
+ 
+// $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+// VALUES ('John', 'Doe', 'john@example.com')";
+ 
+// if (mysqli_query($conn, $sql)) {
+//     echo "新记录插入成功";
+// } else {
+//     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+// }
  
 mysqli_close($conn);
 ?>
