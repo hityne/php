@@ -54,20 +54,20 @@ $sql = "CREATE TABLE MyGuests (
     reg_date TIMESTAMP
     )";
      
-if (mysqli_query($conn, $sql)) {
-        echo "数据表 MyGuests 创建成功";
-    } else {
-        echo "创建数据表错误: " . mysqli_error($conn);
-    }
- 
-// $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-// VALUES ('John', 'Doe', 'john@example.com')";
- 
 // if (mysqli_query($conn, $sql)) {
-//     echo "新记录插入成功";
-// } else {
-//     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-// }
+//         echo "数据表 MyGuests 创建成功";
+//     } else {
+//         echo "创建数据表错误: " . mysqli_error($conn);
+//     }
+ 
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+ 
+if (mysqli_query($conn, $sql)) {
+    echo "新记录插入成功";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
  
 mysqli_close($conn);
 ?>
