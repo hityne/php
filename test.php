@@ -2,18 +2,19 @@
 <html>
 <body>
 
-<h1>My first PHP page</h1>
 
 <?php
 echo "Hello World!";
 ?>
 
-<?php phpinfo() ?>
+<!-- <?php phpinfo() ?> -->
 
 <?php
-echo date("Y/m/d") . "<br>";
-echo date("Y.m.d") . "<br>";
-echo date("Y-m-d");
+$t=date("H");
+if ($t<"20")
+{
+    echo "Have a good day!";
+}
 ?>
 
 </body>
